@@ -31,6 +31,18 @@ Authorization - Make sure someone's logged in before you perform certain actions
 *Use lucid.app*
 Data Structure + Relationships
 
+## Order
+git
+    gh repo create
+npm init
+npm i \[dependencies\] -s
+create index.js and import dependencies
+backend configurations + middleware setup
+database setup
+data modeling and ERD diagrams
+
+
+
 ## Technologies Used
 
 MERN Stack
