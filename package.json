@@ -1,4 +1,9 @@
 {
+  "name": "mern_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module", //so we can use import statements instead of require statements
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
