@@ -1,4 +1,4 @@
-### MERN Stack App Project #1
+# MERN Stack App Project #1
 
 ## Notes
     "type": "module" 
@@ -12,7 +12,7 @@ Probably the hardest part of this project:
 Authentication - Registration/Login
 Authorization - Make sure someone's logged in before you perform certain actions
 
-# Data Models
+### Data Models
     User
         Location
         Occupation
@@ -40,6 +40,7 @@ create index.js and import dependencies
 backend configurations + middleware setup
 database setup
 data modeling and ERD diagrams
+authentication and authorization
 
 
 
