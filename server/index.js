@@ -10,8 +10,13 @@ import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
+import postRoutes from "./routes/posts.js";
 import { register } from "./controllers/auth.js";
+import { createPost } from "./controllers/posts.js";
 import { verifyToken } from "./middleware/auth.js";
+import User from "./models/User.js";
+import Post from "./models/Post.js";
+import { users, posts} from "./data/index.js";
 
 
 /* CONFIGURATIONS (Backend Configurations and Middleware)
@@ -50,6 +55,7 @@ const upload = multer({ storage }); //this will help us save files
 /* ROUTES WITH FILES */
 /* we need this section because of upload; for the other routes, we can keep them separate */
 app.post("/auth/register", upload.single("picture"), register); //an API: route, middleware, logic/endpoint/function/controller
+app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
@@ -61,6 +67,9 @@ app.use("/auth", authRoutes);
 */
 app.use("/users", userRoutes);
 
+/* POST ROUTES */
+app.use("/posts", postRoutes);
+
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
 mongoose.connect(process.env.MONGO_URL, {
@@ -68,4 +77,8 @@ mongoose.connect(process.env.MONGO_URL, {
     useUnifiedTopology: true,
 }).then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
+
+    /* ADD MOCK DATA ONE TIME; comment out after adding data */
+    User.insertMany(users);
+    Post.insertMany(posts);
 }).catch((error) => console.log(`${error} did not connect`))
