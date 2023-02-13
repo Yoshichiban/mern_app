@@ -12,7 +12,6 @@ import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 import { register } from "./controllers/auth.js";
-import { createPost } from "./controllers/posts.js";
 import { verifyToken } from "./middleware/auth.js";
 
 
@@ -52,7 +51,6 @@ const upload = multer({ storage }); //this will help us save files
 /* ROUTES WITH FILES */
 /* we need this section because of upload; for the other routes, we can keep them separate */
 app.post("/auth/register", upload.single("picture"), register); //an API: route, middleware, logic/endpoint/function/controller
-app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
@@ -63,9 +61,6 @@ app.use("/auth", authRoutes);
 3. add or remove friends
 */
 app.use("/users", userRoutes);
-
-/* POST ROUTES */
-app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
