@@ -33,14 +33,16 @@ Data Structure + Relationships
 
 ## Order
 git
-    gh repo create
-npm init
-npm i \[dependencies\] -s
-create index.js and import dependencies
-backend configurations + middleware setup
-database setup
-data modeling and ERD diagrams
-authentication and authorization
+    gh repo create  
+npm init  
+npm i \[dependencies\] -s  
+create index.js and import dependencies  
+backend configurations + middleware setup  
+database setup  
+data modeling and ERD diagrams  
+authentication and authorization  
+routes setup  
+
 
 
 
