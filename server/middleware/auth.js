@@ -16,6 +16,11 @@ export const verifyToken = async (req, res, next) => {
         
         const verified = jwt.verify(token, process.env.JWT_SECRET);
         req.user = verified;
+        /*
+        proceed to the next step of the function
+        example:
+        app.post("/auth/register", upload.single("picture"), verifyToken, register)
+        */
         next();
 
     } catch (err) {

@@ -71,6 +71,7 @@ export const login = async (req, res) => {
         //so it doesn't get sent back to the frontend and kept safe
         delete user.password;
         res.status(200).json({ token, user });
+        //typically when you work in a company, the company is going to be using a 3rd party authentication which would be way more secure than your own implementation
 
     } catch (err) {
         //you can customize error messages but for this simple app, we're not going to do that

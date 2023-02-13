@@ -12,6 +12,10 @@ Probably the hardest part of this project:
 Authentication - Registration/Login
 Authorization - Make sure someone's logged in before you perform certain actions
 
+index.js(app.use/post/get) -> use routes if app.use()  
+route -> import express and controller -> router from Express -> CRUD -> export  
+controller -> import Models -> CRUD with try-catch  
+
 ### Data Models
     User
         Location
@@ -41,9 +45,6 @@ database setup
 data modeling and ERD diagrams  
 authentication and authorization  
 routes setup  
-
-
-
 
 ## Technologies Used
 
