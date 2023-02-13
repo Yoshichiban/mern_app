@@ -48,11 +48,11 @@ routes setup
 
 ## Technologies Used
 
-# MERN Stack
-MongoDB, ExpressJS, ReactJS, NodeJS
+### MERN Stack
+MongoDB, Express, React, Node
 
-# Industry Standards
-**Frontend**
+### Industry Standards
+**Frontend**  
 ReactJS
 React Router - navigation
 Formik + yup - form and form validation
@@ -60,14 +60,14 @@ Redux Toolkit - state management
 Redux Persist - store in local storage
 React dropzone - image uploads
 
-**Backend**
+**Backend**  
 NodeJS - runtime
 Express - backend framework
 Mongoose - managing MongoDB
 JSON Web Token(JWT) - Authentication
 Multer - File uploads
 
-# Dependencies
+### Dependencies
 npm i -g nodemon  
 npm i express body-parser bcrypt cors dotenv gridfs-stream multer multer-gridfs-storage helmet morgan jsonwebtoken mongoose
 
