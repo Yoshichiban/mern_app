@@ -32,8 +32,7 @@ Authorization - Make sure someone's logged in before you perform certain actions
 Data Structure + Relationships
 
 ## Order
-git  
-    gh repo create  
+(git) gh repo create  
 npm init  
 npm i \[dependencies\] -s  
 create index.js and import dependencies  
@@ -53,19 +52,19 @@ MongoDB, Express, React, Node
 
 ### Industry Standards
 **Frontend**  
-ReactJS
-React Router - navigation
-Formik + yup - form and form validation
-Redux Toolkit - state management
-Redux Persist - store in local storage
-React dropzone - image uploads
+ReactJS  
+React Router - navigation  
+Formik + yup - form and form validation  
+Redux Toolkit - state management  
+Redux Persist - store in local storage  
+React dropzone - image uploads  
 
 **Backend**  
-NodeJS - runtime
-Express - backend framework
-Mongoose - managing MongoDB
-JSON Web Token(JWT) - Authentication
-Multer - File uploads
+NodeJS - runtime  
+Express - backend framework  
+Mongoose - managing MongoDB  
+JSON Web Token(JWT) - Authentication  
+Multer - File uploads  
 
 ### Dependencies
 npm i -g nodemon  
