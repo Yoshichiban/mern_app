@@ -32,7 +32,7 @@ Authorization - Make sure someone's logged in before you perform certain actions
 Data Structure + Relationships
 
 ## Order
-git
+git  
     gh repo create  
 npm init  
 npm i \[dependencies\] -s  
