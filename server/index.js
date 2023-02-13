@@ -8,6 +8,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/users.js";
 import { register } from "./controllers/auth.js";
 
 /* CONFIGURATIONS (Backend Configurations and Middleware)
@@ -44,7 +46,18 @@ const storage = multer.diskStorage({
 const upload = multer({ storage }); //this will help us save files
 
 /* ROUTES WITH FILES */
+/* we need this section because of upload; for the other routes, we can keep them separate */
 app.post("/auth/register", upload.single("picture"), register); //an API: route, middleware, logic/endpoint/function/controller
+
+/* ROUTES */
+app.use("/auth", authRoutes);
+
+/* USER ROUTES
+1. grab the particular user but versatile enough that if we go to an individual page, we should be able to grab that user's routes/information as well; meaning, grab any user via just their id
+2. get user friends(friends list)
+3. add or remove friends
+*/
+app.use("/users", userRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;

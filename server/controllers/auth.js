@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import User from "../models/User.js"
 
 /* REGISTER USER */
@@ -34,10 +34,15 @@ export const register = async (req, res) => {
             /* random value for now; implementation later */
             viewedProfile: Math.floor(Math.random() * 10000),
             impressions: Math.floor(Math.random() * 10000)
-        }
-        )
+        });
+        const savedUser = await newUser.save();
+        res.status(201).json(savedUser);
+        /*
+        send the user a status code of 201, meaning something have been craeted, a JSON version of the savedUser so that the front-end can receive this response; front-end engineers always make sure they're getting the correct response; back-end engineers make sure the data coming back from the backend is correct and in the proper structure that the front-end can view otherwise it creates more work
+        */
     } catch (err) {
-
+        //error message of whatever the mongodb database has returned
+        res.status(500).json({ error: err.message })
     }
 
 }
@@ -48,3 +53,27 @@ response is what we are going to be sending back to the front end
 
 express provides this functionality by default
 */
+
+/* LOGGING IN */
+export const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        //we're using mongoose to try to find the one that has the specified email; then bring back all the user information over here
+        const user = await User.findOne({ email: email });
+        //if the user does not exist(like improper email), return res.status
+        if (!user) return res.status(400).json({ msg: "User does not exist." });
+
+        //this is gonna determine if we match the password; using the same salt
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) return res res.status(400).json({ msg: "Invalid credentials" });
+
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+        //so it doesn't get sent back to the frontend and kept safe
+        delete user.password;
+        res.status(200).json({ token, user });
+
+    } catch (err) {
+        //you can customize error messages but for this simple app, we're not going to do that
+        res.status(500).json({ error: err.message })
+    }
+}
