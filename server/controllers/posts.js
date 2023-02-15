@@ -17,7 +17,7 @@ export const createPost = async (req, res) => {
             likes: {
                 //"someid" : true
             },
-            comments: []
+            comments: [],
         })
         await newPost.save();
 
@@ -27,7 +27,7 @@ export const createPost = async (req, res) => {
     } catch (err) {
         res.status(409).json({ message: err.message });
     }
-}
+};
 
 /* READ */
 export const getFeedPosts = async (req, res) => {
@@ -37,7 +37,7 @@ export const getFeedPosts = async (req, res) => {
     } catch (err) {
         res.status(404).json({ message: err.message })
     }
-}
+};
         
 export const getUserPosts = async (req, res) => {
     try {
@@ -47,7 +47,7 @@ export const getUserPosts = async (req, res) => {
     } catch (err) {
         res.status(404).json({ message: err.message })
     }
-}
+};
 
 /* UPDATE */
 export const likePost = async (req, res) => {
@@ -75,4 +75,4 @@ export const likePost = async (req, res) => {
     } catch (err) {
         res.status(404).json({ message: err.message })
     }
-}
+};

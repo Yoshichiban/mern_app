@@ -7,3 +7,5 @@ const router = express.Router();
 //instead of app.use
 //this will be "/auth/login" not just "/login"
 router.post("/login", login)
+
+export default router;
