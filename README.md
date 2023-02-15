@@ -10,6 +10,8 @@ ES6 Import:
 export default = import anyName
 export const namedExport = import {namedExport}
 
+Ctrl+D - shortcut for selecting next matching word
+
 ### Backend
 Before writing the APIs, look at the final build or mocks or whatever you have. You want to see how you're going to organize your data models. Data models are ways of organizing your data in nice, succinct categories... making sure they are separate from each other and we can make relations between each other. We're going to be using MongoDB which is a little more freeform compared to SQL type database where everything is about relations.
 
@@ -35,6 +37,14 @@ import HomePage from './scenes/homePage';
 
 Redux File Folder
 Redux Toolkit - global state; data will be accessible throughout the entire application
+
+Hooks:
+useState
+useNavigate
+useDispatch
+useTheme
+
+sx - The sx prop lets you add any valid CSS to an element, while using values from your theme to keep styles consistent.
 
 ## Data Models
     User

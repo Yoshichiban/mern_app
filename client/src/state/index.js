@@ -5,8 +5,8 @@ const initialState = {
     mode:  "light",
     
     //auth informations
-    user: null,
-    token: null,
+    user: "",
+    token: "",
 
     posts: [],
 };
