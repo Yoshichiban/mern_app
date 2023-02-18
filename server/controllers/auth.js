@@ -65,7 +65,7 @@ export const login = async (req, res) => {
 
         //this is gonna determine if we match the password; using the same salt
         const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return res res.status(400).json({ msg: "Invalid credentials" });
+        if (!isMatch) return res.status(400).json({ msg: "Invalid credentials" });
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
         //so it doesn't get sent back to the frontend and kept safe
