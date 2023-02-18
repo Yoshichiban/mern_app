@@ -110,7 +110,7 @@ Redux - most popular enterprise-level state management tool
 Redux Toolkit - a very easy way to use Redux; it's a wrapper around redux
 Redux Persist - store state in local storage  
 React dropzone - image uploads  
-dotenv - environment variables
+dotenv - environment variables  
 Formik + yup - form handling and form validation  
 
 **Backend**  
